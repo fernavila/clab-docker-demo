@@ -1,5 +1,5 @@
 # It's needed to have the Dockerfile inside the root folder into the project
-FROM gradle:jdk8-alpine AS build
+FROM gradle:7-jdk-alpine AS build
 # Copy all files to the stage
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
