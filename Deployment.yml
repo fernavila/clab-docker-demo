@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: memory-test
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clab-docker-demo
+  labels:
+    app: clab-docker-demo
+  namespace: memory-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: clab-docker-demo
+  template:
+    metadata:
+      labels:
+        app: clab-docker-demo
+    spec:
+      containers:
+      - name: clab-docker-demo
+        image: test:v1
+        ports:
+        - containerPort: 8082

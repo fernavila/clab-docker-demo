@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: clab-docker-demo
+#spring.profiles: default,kubernetess
+  cloud:
+    kubernetes:
+      enabled: true
+      config:
+        enabled: true
+      reload:
+        enabled: true
+        mode: event
+        strategy: refresh
+
+#spring.cloud.kubernetes.secrets.enabled: true
+#spring.cloud.kubernetes.secrets.name: pod-iam-test
+
+#kubernetes.trust.certificates: true
+management:
+  endpoint:
+    restart:
+      enabled: true
